@@ -61,7 +61,7 @@ const DrumKit = () => {
         <link rel="icon" href="/snowflake-solid.svg" />
       </Head>
       <Image
-        src={"/drum-kit/background.jpg"}
+        src={"/drum-kit/background.webp"}
         layout="fill"
         objectFit="cover"
         objectPosition={"center"}
