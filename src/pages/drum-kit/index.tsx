@@ -19,8 +19,11 @@ const DrumKit = () => {
   useEffect(() => {
     window.addEventListener("keydown", function (e) {
       const key = document.querySelector(`div[data-key="${e.key}"]`);
-      const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+      const audio: Record<any, any> | null = document.querySelector(
+        `audio[data-key="${e.key}"]`
+      );
       if (!audio || !key) return;
+      console.log(audio);
       audio.currentTime = 0;
       audio.play();
       key.classList.remove(`border-[${normalBorder}]`);
