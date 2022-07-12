@@ -23,19 +23,19 @@ const DrumKit = () => {
         `audio[data-key="${e.key}"]`
       );
       if (!audio || !key) return;
-      console.log(audio);
+
       audio.currentTime = 0;
       audio.play();
-      key.classList.remove(`border-[${normalBorder}]`);
-      key.classList.add(`border-[${activeBorder}]`);
+      key.classList.remove(`border-[#143F6B]`);
+      key.classList.add(`border-[#FF9F29]`);
     });
 
     window.addEventListener("keyup", function (e) {
       const key = document.querySelector(`div[data-key="${e.key}"]`);
       const audio = document.querySelector(`audio[data-key="${e.key}"]`);
       if (!audio || !key) return;
-      key.classList.remove(`border-[${activeBorder}]`);
-      key.classList.add(`border-[${normalBorder}]`);
+      key.classList.remove(`border-[#FF9F29]`);
+      key.classList.add(`border-[#143F6B]`);
     });
 
     // const keys = document.querySelectorAll("div");
@@ -74,7 +74,7 @@ const DrumKit = () => {
               <div
                 key={k.keycode + k.key}
                 data-key={k.key.toLowerCase()}
-                className={`flex flex-col items-center border-5 rounded-2 min-w-80 transform transition duration-200 shadow-1 shadow-doctor-neutral-7 bg-gmb-neutrals-300 border-[${normalBorder}]`}
+                className={`flex flex-col items-center border-5 rounded-2 min-w-80 transform transition duration-200 shadow-1 shadow-doctor-neutral-7 bg-gmb-neutrals-300 border-[#143F6B]`}
               >
                 <kbd className="text-30 font-700">{k.key}</kbd>
                 <span className="sound font-600">{k.soundName}</span>
